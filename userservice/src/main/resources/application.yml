@@ -1,0 +1,25 @@
+spring:
+  application:
+    name: user-service
+
+server:
+  port: 8082
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: ${EUREKA_URI:http://localhost:8761/eureka}
+  instance:
+    preferIpAddress: true
+#
+#gallery-service:
+#  ribbon:
+#    eureka:
+#      enabled: true
+#    ServerListRefreshInterval: 1000
+
+
+gallery-service:
+  ribbon:
+    listOfServers: localhost:8085,localhost:8086
+    eureka:
+      enabled: true
